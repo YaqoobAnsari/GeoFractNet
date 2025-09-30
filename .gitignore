@@ -1,0 +1,43 @@
+# =========================
+# GeoFractNet .gitignore
+# =========================
+
+# --- Python cache / env ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+.env.*
+
+# --- Logs / editor / OS ---
+Logs/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Big binaries we never commit ---
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.rar
+*.pth
+*.pt
+*.h5
+*.onnx
+*.npy
+*.npz
+
+# Keep these folders present but empty in Git
+Original Images/**
+!Original Images/.gitkeep
+
+Edge Binary Masks/**
+!Edge Binary Masks/.gitkeep
+
+Test Images/**
+!Test Images/.gitkeep
