@@ -18,7 +18,7 @@ Natural fracture networks govern subsurface fluid flow, rock mass stability, and
 - **State-of-the-art performance**: mIoU of 0.91, Dice score of 0.92, and Boundary F1 of 0.90
 
 <p align="center">
-  <img src="docs/architecture.png" alt="GeoFractNet Architecture" width="800"/>
+  <img src="docs/arch.png" alt="GeoFractNet Architecture" width="800"/>
 </p>
 
 ---
@@ -196,7 +196,7 @@ python Code/inference.py --image path/to/outcrop.jpg \
 Sample predictions on diverse geological settings:
 
 <p align="center">
-  <img src="Results/Result Images/sample_1.png" alt="Result 1" width="800"/>
+  <img src="Docs/results.png" alt="Result 1" width="800"/>
   <br>
   <em>Left: Original outcrop. Middle: Ground truth. Right: GeoFractNet prediction.</em>
 </p>
