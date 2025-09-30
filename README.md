@@ -53,6 +53,8 @@ GeoFractNet/
 ├── Original Images/               # Input outcrop images (from GeoCrack)
 ├── Edge Binary Masks/             # Ground truth fracture masks (from GeoCrack)
 ├── Test Images/                   # Held-out test images (from GeoCrack)
+├── Weights/                       # Pre-trained model weights
+│   └── best_*unet_*model_17_15_24.pth
 ├── Results/
 │   └── Result Images/             # Sample predictions (10 examples included)
 ├── images.txt                     # Image-to-split mapping file
@@ -61,7 +63,7 @@ GeoFractNet/
 └── README.md
 ```
 
-> **Note**: The folders `Original Images/`, `Edge Binary Masks/`, and `Test Images/` are empty by default to maintain repository size. Download the complete dataset from GeoCrack (see Dataset section).
+> **Important Note**: Due to size constraints, the complete training and testing images are **not included** in this repository. The folders `Original Images/`, `Edge Binary Masks/`, and `Test Images/` contain only sample data. **Download the full GeoCrack dataset** from the link in the Dataset section below to access all 12,158 image-mask pairs.
 
 ---
 
@@ -80,9 +82,15 @@ GeoFractNet is trained and validated on **[GeoCrack](https://doi.org/10.7910/DVN
 - **Realistic scene artifacts**: shadows, vegetation, blast holes, topographic occlusions
 
 **Dataset Access:**
-1. Download GeoCrack dataset: [Harvard Dataverse](https://doi.org/10.7910/DVN/GeoCrack)
-2. Extract images and masks into respective folders
-3. Use `images.txt` to map training/validation/test splits
+
+⚠️ **Important**: Due to repository size limitations, the complete dataset is **not included** in this repository. Only sample images and results are provided here.
+
+1. Download the full GeoCrack dataset: [Harvard Dataverse](https://doi.org/10.7910/DVN/GeoCrack)
+2. Extract all 12,158 image-mask pairs into the respective folders:
+   - Place RGB images in `Original Images/`
+   - Place binary masks in `Edge Binary Masks/`
+   - Place test images in `Test Images/`
+3. Use `images.txt` to map training/validation/test splits to the downloaded GeoCrack images
 
 ---
 
@@ -113,11 +121,14 @@ pip install -r requirements.txt
 ```
 
 4. **Download GeoCrack dataset** and organize files:
+
+⚠️ **Note**: This repository does not contain the full dataset due to size constraints. Download from [GeoCrack](https://doi.org/10.7910/DVN/GeoCrack) first.
+
 ```
 GeoFractNet/
-├── Original Images/        # Place RGB images here
-├── Edge Binary Masks/      # Place binary masks here
-└── Test Images/            # Place test images here
+├── Original Images/        # Place all RGB images from GeoCrack here
+├── Edge Binary Masks/      # Place all binary masks from GeoCrack here
+└── Test Images/            # Place test images from GeoCrack here
 ```
 
 ---
@@ -147,7 +158,7 @@ python Code/train.py --config configs/default.yaml \
 Evaluate trained model on test set:
 
 ```bash
-python Code/evaluate.py --checkpoint weights/geofractnet_best.pth \
+python Code/evaluate.py --checkpoint Weights/best_*unet_*model_17_15_24.pth \
                         --test_dir Dataset/test.csv
 ```
 
@@ -162,7 +173,7 @@ Run inference on new outcrop images:
 
 ```bash
 python Code/inference.py --image path/to/outcrop.jpg \
-                         --checkpoint weights/geofractnet_best.pth \
+                         --checkpoint Weights/best_*unet_*model_17_15_24.pth \
                          --output results/
 ```
 
@@ -295,9 +306,23 @@ The edge-aware architecture can be adapted to:
 
 ## Model Weights
 
-Pre-trained model weights will be released upon paper acceptance. Check back for updates or contact the authors.
+✅ **Pre-trained model weights are available** in this repository under `Weights/best_*unet_*model_17_15_24.pth`
 
-**Temporary access**: Contact [yansari@tamu.edu](mailto:yansari@tamu.edu) for research purposes.
+The model achieves state-of-the-art performance with:
+- mIoU: 0.91
+- Dice Score: 0.92
+- Boundary F1: 0.90
+
+**Usage:**
+```bash
+# Load pre-trained weights for evaluation
+python Code/evaluate.py --checkpoint Weights/best_*unet_*model_17_15_24.pth
+
+# Load pre-trained weights for inference
+python Code/inference.py --checkpoint Weights/best_*unet_*model_17_15_24.pth --image your_image.jpg
+```
+
+For questions about the weights or custom training, contact [yansari@tamu.edu](mailto:yansari@tamu.edu).
 
 ---
 
