@@ -322,7 +322,7 @@ python Code/evaluate.py --checkpoint Weights/best_*unet_*model_17_15_24.pth
 python Code/inference.py --checkpoint Weights/best_*unet_*model_17_15_24.pth --image your_image.jpg
 ```
 
-For questions about the weights or custom training, contact [yansari@tamu.edu](mailto:yansari@tamu.edu).
+For questions about the weights or custom training, contact [yansari@andrew.cmu.edu](mailto:yansari@andrew.cmu.edu).
 
 ---
 
@@ -346,7 +346,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ## Contact
 
 **Corresponding Author**: Mohammed Yaqoob  
-📧 Email: [yansari@tamu.edu](mailto:yansari@tamu.edu)  
+📧 Email: [yansari@andrew.cmu.edu](mailto:yansari@andrew.cmu.edu)  
 🏛️ Affiliation: Texas A&M University, Electrical and Computer Engineering, Doha, Qatar
 
 **Project Contributors:**
@@ -358,10 +358,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## Related Projects
 
-- **[GeoCrack Dataset](https://doi.org/10.7910/DVN/GeoCrack)** - High-resolution fracture edge dataset
-- **[FraSegNet](https://github.com/...)** - Alternative fracture segmentation approach
-- **[Virtual Outcrop Models](https://github.com/...)** - 3D fracture analysis tools
-
+- **[GeoCrack Dataset](https://doi.org/10.7910/DVN/GeoCrack)** - High-resolution fracture edge dataset 
 ---
 
 ## Roadmap
