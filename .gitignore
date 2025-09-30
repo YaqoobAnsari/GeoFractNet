@@ -24,8 +24,7 @@ Thumbs.db
 *.tar
 *.tar.gz
 *.7z
-*.rar
-*.pth
+*.rar 
 *.pt
 *.h5
 *.onnx
