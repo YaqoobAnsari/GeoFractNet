@@ -196,7 +196,7 @@ python Code/inference.py --image path/to/outcrop.jpg \
 Sample predictions on diverse geological settings:
 
 <p align="center">
-  <img src="Docs/results.png" alt="Result 1" width="800"/>
+  <img src="Docs/Results.png" alt="Result 1" width="800"/>
   <br>
   <em>Left: Original outcrop. Middle: Ground truth. Right: GeoFractNet prediction.</em>
 </p>
