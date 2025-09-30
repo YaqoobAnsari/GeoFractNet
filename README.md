@@ -18,7 +18,7 @@ Natural fracture networks govern subsurface fluid flow, rock mass stability, and
 - **State-of-the-art performance**: mIoU of 0.91, Dice score of 0.92, and Boundary F1 of 0.90
 
 <p align="center">
-  <img src="docs/arch.png" alt="GeoFractNet Architecture" width="800"/>
+  <img src="Docs/Arch.PNG" alt="GeoFractNet Architecture" width="800"/>
 </p>
 
 ---
